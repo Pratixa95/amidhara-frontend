@@ -13,7 +13,7 @@ import Home from './pages/Home';
 const App = () => {
   return (
     <Router>
-      {/* <CursorEffect/> */}
+      
       <Navbar />
 
       <Routes>
