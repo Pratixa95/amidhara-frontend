@@ -8,7 +8,7 @@ import Product from './pages/Product';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
-import Home from './pages/Home';
+import Home from './pages/home';
 
 const App = () => {
   return (
