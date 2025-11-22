@@ -7,9 +7,8 @@ import Service from './pages/Service';
 import Product from './pages/Product';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
-import Home from './pages/home';
-import CursorEffect from './components/CursorEffect';
 import Footer from './components/Footer';
+import Home from './pages/Home';
 
 const App = () => {
   return (
