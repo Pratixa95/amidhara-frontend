@@ -1,0 +1,181 @@
+.contact-page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 20px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #0b0c0d, #111212);
+}
+
+/* Header */
+.contact-header h1 {
+  font-size: 42px;
+  color: #fcbf49;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  font-size: 16px;
+  color: rgb(200,200,200);
+  margin-bottom: 40px;
+}
+
+/* Contact Form */
+.contact-form-container {
+  background: rgba(0,0,0,0.35);
+  padding: 35px 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 50px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.contact-form h2 {
+  color: #4ec3ff;
+  margin-bottom: 25px;
+  font-size: 30px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 15px;
+  background: rgba(255,255,255,0.08);
+  color: grey;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s all;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 12px #4ec3ff;
+  background: rgba(78, 195, 255, 0.1);
+}
+
+.contact-form textarea { resize: none; }
+
+/* Button - same style as Product page */
+.btn-submit {
+  background: linear-gradient(90deg, #4ec3ff, #fcbf49);
+  color: #000;
+  padding: 14px 30px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(90deg, #ff6b6b, #4ec3ff);
+  transform: scale(1.05);
+  color: #fff;
+}
+
+/* Contact Info Cards */
+.contact-info h2 {
+  color: #fcbf49;
+  font-size: 36px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.info-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  flex: 1;
+  min-width: 250px;
+  background: linear-gradient(145deg, rgba(78, 195, 255, 0.2), rgba(252, 191, 73, 0.2));
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  padding: 25px 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(78, 195, 255, 0.4);
+}
+
+.info-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #4ec3ff;
+}
+
+.info-card p {
+  color: rgb(220,220,220);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .info-cards {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .info-card {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* FIX: equal card sizes */
+  .info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .info-card {
+    width: 100%;
+    max-width: 330px; /* SAME width for all */
+    min-height: 160px; /* SAME height for all */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centers text */
+    align-items: center;
+  }
+
+  .contact-header h1 { font-size: 28px; }
+  .contact-form h2 { font-size: 24px; }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 13px;
+  }
+
+  .btn-submit { padding: 12px 20px; font-size: 14px; }
+
+  .info-icon { font-size: 35px; }
+
+  .info-card p {
+    font-size: 14px;
+    margin: 8px 0 0;
+  }
+}

@@ -1,0 +1,125 @@
+/* FOOTER MAIN */
+.footer {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 50px 15px 20px;
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+/* GRID */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: start;
+  text-align: left;
+}
+
+/* BOX */
+.footer-box h3 {
+  color: #4ec3ff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-box h4 {
+  color: #fcbf49;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.footer-box p,
+.footer-box ul li {
+  color: rgb(210,210,210);
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+/* Quick Links in line for desktop, stacked for mobile */
+.footer-box ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-box ul li {
+  margin-bottom: 0;
+}
+
+.footer-box ul li a {
+  color: rgb(210,210,210);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+  color: #4ec3ff;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: rgb(190,190,190);
+  font-size: 14px;
+  gap: 10px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-links a {
+  color: #4ec3ff;
+  text-decoration: none;
+  padding: 0 5px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fcbf49;
+}
+
+.footer-links span {
+  color: rgb(150,150,150);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer-box ul {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-box h3 { font-size: 20px; }
+  .footer-box h4 { font-size: 18px; }
+  .footer-box p, .footer-box ul li { font-size: 14px; }
+  .footer-links { gap: 5px; }
+}

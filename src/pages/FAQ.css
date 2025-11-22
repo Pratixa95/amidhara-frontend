@@ -1,0 +1,123 @@
+.faq-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.faq-header h1 {
+  font-size: 42px;
+  color: #fcbf49;
+  margin-bottom: 10px;
+}
+
+.faq-header p {
+  font-size: 16px;
+  color: rgb(200,200,200);
+  margin-bottom: 40px;
+}
+
+/* FAQ container */
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* FAQ card */
+.faq-card {
+  background: rgba(0,0,0,0.35);
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+
+.faq-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question h3 {
+  font-size: 18px;
+  color: #4ec3ff;
+  margin: 0;
+}
+
+.faq-question span {
+  font-size: 24px;
+  color: #fcbf49;
+  transition: transform 0.3s ease;
+}
+
+.faq-card.open .faq-question span {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.faq-card.open .faq-answer {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 15px;
+  text-align: left;
+  color: rgb(200,200,200);
+}
+
+/* Contact section */
+.faq-contact {
+  margin-top: 50px;
+}
+
+.faq-contact h2 {
+  color: #fcbf49;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.faq-contact p {
+  color: rgb(200,200,200);
+  margin-bottom: 20px;
+}
+
+.btn-contact {
+  background: linear-gradient(90deg, #4ec3ff, #fcbf49);
+  color: #000;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-contact:hover {
+  background: linear-gradient(90deg, #ff6b6b, #4ec3ff);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-header h1 { font-size: 32px; }
+  .faq-question h3 { font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .faq-card { padding: 15px; }
+}

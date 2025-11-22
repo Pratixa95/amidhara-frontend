@@ -1,0 +1,41 @@
+/* Apply Poppins font globally */
+body, html {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #fff; /* default text color, adjust if needed */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d; /* optional, depends on your theme */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Paragraphs */
+p {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* Links */
+a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Buttons */
+button {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Input, textarea, select */
+input, textarea, select {
+    font-family: 'Poppins', sans-serif;
+}
