@@ -6,36 +6,48 @@ const Main = () => {
   const navigate = useNavigate();
 
   const handleQuoteClick = () => {
-    navigate("/contact"); // navigate to contact page
+    navigate("/contact");
   };
 
   return (
-    <div>
-      {/* Slider */}
-      <header className="slider">
-        <div className="slides">
-          <div className="slide slide1"></div>
-          <div className="slide slide2"></div>
-          <div className="slide slide3"></div>
-          <div className="slide slide4"></div>
-          <div className="slide slide5"></div>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="hero container">
-        <div className="hero-center">
-          <h1>
+    <div className="home-page-container">
+      {/* Hero Content Section */}
+      <section className="hero-content">
+        
+        {/* The Glass Card */}
+        <div className="glass-card">
+          <h1 className="animate-text">
+            Welcome to <br />
             <span>Amidhara Borewell</span>
           </h1>
 
-          <p className="hero-desc">
-            We provide reliable and professional borewell drilling services with modern equipment and skilled experts. Our services include new borewell drilling, borewell recharge, air compressor service, submersible pumps, emergency repair, water tanker service, and maintenance. With 30 years of experience, we ensure accurate drilling, fast service, and long-lasting results. Customer satisfaction and fair pricing are our top priorities.
+          <p className="hero-tagline animate-text delay-1">
+            Deep Drilling Solutions & Professional Water Services
           </p>
 
-          <div className="hero-buttons">
-            <button className="btn-primary" onClick={handleQuoteClick}>
-              Get Free Quote
+          {/* Features Grid */}
+          <div className="features-grid animate-text delay-2">
+            <div className="feature-item">
+              <h3>30+ Years</h3>
+              <p>Proven Experience</p>
+            </div>
+            <div className="feature-item">
+              <h3>Advanced</h3>
+              <p>Drilling Rigs</p>
+            </div>
+            <div className="feature-item">
+              <h3>Reliable</h3>
+              <p>Water Source</p>
+            </div>
+          </div>
+
+          <p className="hero-desc animate-text delay-3">
+            We specialize in reliable borewell drilling, timely recharging, submersible pump installation, and comprehensive maintenance. We ensure accurate drilling and long-lasting water solutions with skilled experts and modern technology.
+          </p>
+
+          <div className="hero-buttons animate-text delay-4">
+            <button className="btn-primary glow-effect" onClick={handleQuoteClick}>
+              Get Free Quote <span className="arrow">→</span>
             </button>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import logo from '../assets/logonew.png';
+import logo from '../assets/logo_tejas.png';
 
 const Navbar = () => {
   const navigate = useNavigate(); // Initialize navigate
@@ -44,6 +44,9 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/product" onClick={collapseNavbar}>Product</Link>
+            </li>
+              <li className="nav-item">
+              <Link className="nav-link" to="/gallery" onClick={collapseNavbar}>Gallery</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/faq" onClick={collapseNavbar}>FAQ</Link>
