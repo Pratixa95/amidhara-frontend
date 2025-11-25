@@ -2,16 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap');
 
 /* === Container === */
-/* We use min-height to center content, but background is transparent 
-   to let the App.js WaterBackground show through */
 .home-page-container {
   width: 100%;
-  min-height: 100vh; /* Full screen */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
   box-sizing: border-box;
+  /* Ensure no overflow triggers scrollbars during animation */
+  overflow: hidden; 
 }
 
 /* === Hero Content === */
@@ -20,23 +20,24 @@
   max-width: 1200px;
   display: flex;
   justify-content: center;
-  z-index: 10; /* Above the background */
+  z-index: 10;
 }
 
-/* === Glassmorphism Card === */
-/* Adjusted transparency so the water animation is visible behind it */
+/* === Glassmorphism Card (Desktop) === */
 .glass-card {
-  background: rgba(255, 255, 255, 0.03); /* Very subtle white tint */
-  backdrop-filter: blur(12px); /* Blurs the moving water behind text */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Highlight top edge */
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding: 60px 40px;
   border-radius: 24px;
   text-align: center;
   max-width: 900px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); /* Deep shadow for depth */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Hardware acceleration for desktop */
+  will-change: transform;
 }
 
 .glass-card:hover {
@@ -58,7 +59,6 @@ h1 {
 }
 
 h1 span {
-  /* Gradient Text */
   background: linear-gradient(to right, #ffb347, #ffcc33);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -94,7 +94,6 @@ h1 span {
   justify-content: center;
   gap: 50px;
   margin: 30px 0;
-  /* Elegant separator lines */
   background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
   padding: 30px 0;
 }
@@ -135,7 +134,7 @@ h1 span {
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 5px 20px rgba(0, 198, 255, 0.4);
   display: inline-flex;
   align-items: center;
@@ -177,13 +176,7 @@ h1 span {
   }
 }
 
-/* === Responsive === */
-@media (max-width: 992px) {
-    h1 { font-size: 3rem; }
-    .glass-card { padding: 40px 30px; max-width: 100%; }
-    .features-grid { gap: 20px; }
-}
-
+/* === MOBILE OPTIMIZATION TO STOP FLICKERING === */
 @media (max-width: 768px) {
   .home-page-container {
     padding: 10px;
@@ -192,12 +185,30 @@ h1 span {
   .glass-card {
     padding: 30px 20px;
     border-radius: 20px;
-    /* Reduce blur on mobile for performance */
-    backdrop-filter: blur(8px); 
+    
+    /* CRITICAL FIX: Remove blur on mobile to stop flickering */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    
+    /* Use a darker, simple semi-transparent background instead */
+    background: rgba(0, 0, 0, 0.6); 
+    
+    /* Remove complex shadows on mobile */
+    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
-  h1 { font-size: 2.2rem; margin-bottom: 10px; }
-  .hero-tagline { font-size: 1.1rem; margin-bottom: 25px; }
+  h1 { 
+    font-size: 2.2rem; 
+    margin-bottom: 10px;
+    /* Reduce text shadow complexity */
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5); 
+  }
+
+  .hero-tagline { 
+    font-size: 1.1rem; 
+    margin-bottom: 25px; 
+  }
   
   .features-grid {
     flex-direction: row;
@@ -223,7 +234,7 @@ h1 span {
   .features-grid { 
       flex-direction: column; 
       gap: 20px; 
-      background: none; /* Remove line on very small screens */
+      background: none; 
   }
   .btn-primary { 
       width: 100%; 
