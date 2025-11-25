@@ -122,9 +122,9 @@
   
   /* The highlight wave is usually the cause of mobile blinking, make it very subtle */
   .highlight-wave {
-    animation-duration: 35s;
-    opacity: 0.15;
-    filter: blur(20px); /* Less blur = easier for phone CPU */
+    animation-duration: 50s;
+    opacity: 0.05;
+    filter: blur(10px); /* Less blur = easier for phone CPU */
   }
 
   /* Reduce blur on all layers for performance */
